@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>jQuery UI Lookup - Default functionality</title>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/themes/base/jquery-ui.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="demos.css" type="text/css" media="all" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.13/jquery-ui.js" type="text/javascript"></script>
+	<script type="text/javascript" src="http://jqueryui.com/themeroller/themeswitchertool/"></script>
+	<script src="../jquery.ui.lookup.js"></script>
+	<script src="local.js"></script>
+	<script src="remote-jsonp.js"></script>
+	<script src="custom-data.js"></script>
+	<script type="text/javascript">
+	$(function() {		
+		$('#switcher').themeswitcher();
+	});
+	</script>
+</head>
+<body>
+
+<div id="switcher"></div>
+<h1>Demos</h1>
+<p>Here are a few demos that replicate a some of the jQuery UI Autocomplete demos.</p>
+
+<h2>Local data</h2>
+	<button id="local">Lookup</button>
+<br /><br />
+
+<h2>Remote data (JSONP)</h2>
+	<input id="remotevalue" type="text" readonly="readonly" style="width: 400px;" /><button id="remotejsonp">Lookup</button>
+<br /><br />
+
+<h2>Custom data</h2>
+	<div id="project-label">Select a project:</div>
+	<img id="project-icon" src="images/transparent_1x1.png" class="ui-state-default"/>
+	<input id="project"/>
+	<input type="hidden" id="project-id"/>
+	<p id="project-description"></p>
+
+</body>
+</html>
