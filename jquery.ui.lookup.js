@@ -20,8 +20,8 @@
 
 	};
 
-	$.widget("ui.lookup", {
-		version: "0.1.0",
+	$.widget('ui.lookup', {
+		version: '0.1.0',
 		options: {
 			cancelText: 'Cancel',
 			delay: 300,
@@ -52,10 +52,10 @@
 				if ($this.options.select) {
 					$this.options.select($this.options.value);
 				}
-				$(this).dialog("close");
+				$(this).dialog('close');
 			};
 			buttons[$this.options.cancelText] = function () {
-				$(this).dialog("close");
+				$(this).dialog('close');
 			};
 
 			$this._dialog = $(dialogBody).dialog({
