@@ -38,6 +38,7 @@
 			value: null,
 			width: 600
 		},
+		_open: null,
 		_resizeAutocomplete: function () {
 			var context = $(this).is('.ui-dialog-content') ? $(this) : $(this).parent().parent().parent();
 			$('.ui-lookup-results ul', context).css({
@@ -157,17 +158,22 @@
 					});
 				}
 			});
-
-			$this.element.bind('focus', function () {
+			
+			$this._open = function () {
 				if (!$this.options.disabled) {
 					$this._dialog.dialog('open');
 				}
-			});
+			}
+
+			$this.element.bind('focus', $this._open);
+			$this.element.bind('click', $this._open);
 		},
 		value: function () {
 			return this.options.value;
 		},
 		destroy: function () {
+			this.element.bind('focus', this._open);
+			this.element.bind('click', this._open);
 			this._autocomplete.autocomplete('destroy');
 			this._dialog.dialog('destroy');
 			$.Widget.prototype.destroy.apply(this, arguments);
