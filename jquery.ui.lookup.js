@@ -83,12 +83,6 @@
 									overflowX: 'hidden'
 								});
 							},
-							close: function (event, ui) {
-								setTimeout(function () {
-									$('#' + $this.options.name + ' .ui-lookup-results ul').show();
-								}, 10);
-								return false;
-							},
 							select: function (event, ui) {
 								var selected = $('#ui-active-menuitem');
 								setTimeout(function () {
@@ -107,6 +101,56 @@
 							}
 						})
 						.focus();
+						
+					// Copied from jQuery UI Autocomplete, just to comment out: self.close( event );
+					
+					var self = $this._autocomplete.data('autocomplete'),
+						doc = $this._autocomplete.data('autocomplete').element[0].ownerDocument;
+					
+					self.menu.options.selected = function (event, ui) {
+						var item = ui.item.data('item.autocomplete'),
+							previous = self.previous;
+
+						// only trigger when focus was lost (click on menu)
+						if (self.element[0] !== doc.activeElement) {
+							self.element.focus();
+							self.previous = previous;
+							// #6109 - IE triggers two focus events and the second
+							// is asynchronous, so we need to reset the previous
+							// term synchronously and asynchronously :-(
+							setTimeout(function () {
+								self.previous = previous;
+								self.selectedItem = item;
+							}, 1);
+						}
+
+						if (false !== self._trigger('select', event, { item: item })) {
+							self.element.val(item.value);
+						}
+						// reset the term after the select event
+						// this allows custom select handling to work properly
+						self.term = self.element.val();
+
+						//self.close( event );
+						self.selectedItem = item;
+					};
+					
+					//End of jQuery UI code
+					
+					self.close = function () {};
+					
+					self.menu.element.dblclick(function (event) {
+						if (!$(event.target).closest('.ui-menu-item a').length) {
+							return;
+						}
+						event.preventDefault();
+						self.menu.select(event);
+						$this.options.value = $this.options._value;
+						if ($this.options.select) {
+							$this.options.select($this.options.value);
+						}
+						$this._dialog.dialog('close');
+					});
 				}
 			});
 
