@@ -25,17 +25,29 @@
 		options: {
 			cancelText: 'Cancel',
 			delay: 300,
-			disabled: null,
+			disabled: false,
 			height: 400,
 			minLength: 1,
 			modal: 400,
 			name: null,
 			okText: 'Ok',
+			resizable: false,
 			select: null,
 			source: null,
 			title: 'Search',
 			value: null,
 			width: 600
+		},
+		_resizeAutocomplete: function () {
+			var context = $(this).is('.ui-dialog-content') ? $(this) : $(this).parent().parent().parent();
+			$('.ui-lookup-results ul', context).css({
+				top: '',
+				left: '',
+				overflowY: 'auto',
+				overflowX: 'hidden',
+				width: $('.ui-lookup-results', context).width(),
+				height: context.height() -  $('div:first', context).outerHeight()
+			});
 		},
 		_create: function () {
 
@@ -62,10 +74,11 @@
 				autoOpen: false,
 				height: $this.options.height,
 				modal: true,
-				resizable: false,
+				resizable: $this.options.resizable,
 				title: $this.options.title,
 				width: $this.options.width,
 				buttons: buttons,
+				resize: $this._resizeAutocomplete,
 				open: function (dialogEvent, dialogUi) {
 					$this._autocomplete = $('input', $this._dialog)
 						.autocomplete({
@@ -73,16 +86,7 @@
 							delay: $this.options.delay,
 							minLength: $this.options.minLength,
 							source: $this.options.source,
-							open: function (event, ui) {
-								$('.ui-lookup-results ul', $this._dialog).css({
-									top: '',
-									left: '',
-									width: $('.ui-lookup-results', $this._dialog).width(),
-									height: $this._dialog.height() - $('div:first', $this._dialog).height(),
-									overflowY: 'auto',
-									overflowX: 'hidden'
-								});
-							},
+							open: $this._resizeAutocomplete,
 							select: function (event, ui) {
 								var selected = $('#ui-active-menuitem');
 								setTimeout(function () {

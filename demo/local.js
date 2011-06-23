@@ -25,6 +25,7 @@ $(function() {
 	];
 	
 	$("#local").button().lookup({
+		resizable: true,
 		source: availableTags,
 		select: function(item) {
 				$("#local").html('<span class="ui-button-text">' + item.label + '</span>');
