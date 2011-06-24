@@ -13,7 +13,7 @@
 
 		createBodyTemplate: function (name) {
 			return '<div id="' + name + '" style="display:none;">' +
-				'<div style="height: 30px;"><label style="display: inline;">Search: <input type="text" class="ui-widget-content ui-corner-all" style="padding: 2px;" /></label></div>' +
+				'<div style="height: 30px;"><label for="' + name + '_search" style="display: inline;">Search: </label><input id="' + name + '_search"  type="text" class="ui-widget-content ui-corner-all" style="padding: 2px;" /></div>' +
 				'<div class="ui-lookup-results"></div>' +
 				'</div>';
 		}
@@ -40,7 +40,7 @@
 		},
 		_open: null,
 		_resizeAutocomplete: function () {
-			var context = $(this).is('.ui-dialog-content') ? $(this) : $(this).parent().parent().parent();
+			var context = $(this).is('.ui-dialog-content') ? $(this) : $(this).parent().parent();
 			$('.ui-lookup-results ul', context).css({
 				top: '',
 				left: '',
