@@ -31,6 +31,7 @@
 			modal: 400,
 			name: null,
 			okText: 'Ok',
+			renderItem: null,
 			resizable: false,
 			select: null,
 			source: null,
@@ -134,6 +135,8 @@
 						}
 						$this._dialog.dialog('close');
 					});
+					if($this.options.renderItem)
+						self._renderItem = $this.options.renderItem;
 				}
 			});
 			
