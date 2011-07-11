@@ -62,9 +62,11 @@
 				buttons = { };
 
 			buttons[$this.options.okText] = function () {
-				$this.options.value = $this.options._value;
-				if ($this.options.select) {
-					$this.options.select($this.options.value);
+				if($this.options._value && $this.options.value != $this.options._value) {
+					$this.options.value = $this.options._value;
+					if ($this.options.select) {
+						$this.options.select($this.options.value);
+					}
 				}
 				$(this).dialog('close');
 			};
