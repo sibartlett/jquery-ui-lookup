@@ -14,19 +14,19 @@ More demos to come.
 
 h2. Options
 
-|Name|Type|Default|Notes|
+|_. Name|_. Type|_. Default|_. Notes|
 |cancelText|String|'Cancel'|Cancel button text|
-|delay|Integer|300|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/#option-delay|
+|delay|Integer|300|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/|
 |disabled|Boolean|false||
 |height|Integer|400||
-|minLength|Integer|1|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/#option-minLength|
-|modal|Boolean|true||
+|minLength|Integer|1|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/|
+|modal|Boolean|true|"See jQuery UI documentation":http://jqueryui.com/demos/dialog/|
 |name|String|null||
 |okText|String|'Ok'|Ok button text|
 |renderItem|Event (function( ul, item ) { ... })|null||
-|resizable|Boolean|false||
+|resizable|Boolean|false|"See jQuery UI documentation":http://jqueryui.com/demos/dialog/|
 |select|Event (function(event, ui) { ... })|null||
-|source|String, Array, Callback|none, must be specified|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/#option-source|
+|source|String, Array, Callback|none, must be specified|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/|
 |title|String|'Search'||
 |value|Object|null||
 |width|Integer|600||
