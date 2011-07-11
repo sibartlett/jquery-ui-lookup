@@ -14,27 +14,22 @@ More demos to come.
 
 h2. Options
 
-|Name|Type|Default|
-|cancelText|String|'Cancel'|
-|delay|Integer|300|
-|disabled|Boolean|false|
-|height|Integer|400|
-|minLength|Integer|1|
-|modal|Boolean|true|
-|name|String|null|
-|okText|String|'Ok'|
-|renderItem|Event (function( ul, item ) { ... })|null|
-|resizable|Boolean|false|
-|select|Event (function(event, ui) { ... })|null|
-|source|String, Array, Callback|none, must be specified|
-|title|String|'Search'|
-|value|Object|null|
-|width|Integer|600|
-
-h3. Events
-|Name|Type|
-|renderItem|String|
-|select|Boolean|
+|Name|Type|Default|Notes|
+|cancelText|String|'Cancel'|Cancel button text|
+|delay|Integer|300|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/#option-delay|
+|disabled|Boolean|false||
+|height|Integer|400||
+|minLength|Integer|1|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/#option-minLength|
+|modal|Boolean|true||
+|name|String|null||
+|okText|String|'Ok'|Ok button text|
+|renderItem|Event (function( ul, item ) { ... })|null||
+|resizable|Boolean|false||
+|select|Event (function(event, ui) { ... })|null||
+|source|String, Array, Callback|none, must be specified|"See jQuery UI documentation":http://jqueryui.com/demos/autocomplete/#option-source|
+|title|String|'Search'||
+|value|Object|null||
+|width|Integer|600||
 
 h2. License
 
