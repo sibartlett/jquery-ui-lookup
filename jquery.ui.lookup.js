@@ -28,7 +28,7 @@
 			disabled: false,
 			height: 400,
 			minLength: 1,
-			modal: 400,
+			modal: true,
 			name: null,
 			okText: 'Ok',
 			renderItem: null,

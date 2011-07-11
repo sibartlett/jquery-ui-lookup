@@ -31,7 +31,7 @@ $(function() {
 			$( "#project" ).val( item.label );
 			$( "#project-id" ).val( item.value );
 			$( "#project-description" ).html( item.desc );
-			$( "#project-icon" ).attr( "src", "https://github.com/jquery/jquery-ui/raw/master/demos/autocomplete/images/" + item.icon );
+			$( "#project-icon" ).attr( "src", "images/" + item.icon );
 
 			return false;
 		},
