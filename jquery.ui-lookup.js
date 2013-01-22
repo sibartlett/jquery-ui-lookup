@@ -1,5 +1,5 @@
 ﻿/*!
- * jQuery UI Lookup 1.0.0
+ * jQuery UI Lookup 1.1.0
  *
  * Copyright 2011, Simon Bartlett
  * Dual licensed under the MIT or GPL Version 2 licenses.
@@ -112,19 +112,6 @@
 					
 					var self = $this._autocomplete.data('autocomplete');
 					self.close = function () {};
-					self._response = function (content) {
-						if (!self.options.disabled && content) {
-							content = self._normalize(content);
-							self._suggest(content);
-							self._trigger('open');
-						} else {
-							self.close();
-						}
-						self.pending--;
-						if (!self.pending) {
-							self.element.removeClass( "ui-autocomplete-loading" );
-						}
-					};
 					self.menu.element.dblclick(function (event) {
 						if (!$(event.target).closest('.ui-menu-item a').length) {
 							return;

@@ -7,7 +7,7 @@
         "lookup",
         "dialog"
     ],
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": {
         "name": "Simon Bartlett",
         "email": "simon.bartlett@me.com",
@@ -16,7 +16,7 @@
     "licenses": [
         {
             "type": "MIT",
-            "url": "https://github.com/sibartlett/jquery-ui-lookup/blob/1.0.0/MIT-LICENSE.txt"
+            "url": "https://github.com/sibartlett/jquery-ui-lookup/blob/1.1.0/MIT-LICENSE.txt"
         }
     ],
     "repository": {
@@ -27,8 +27,8 @@
     "homepage": "https://github.com/sibartlett/jquery-ui-lookup",
     "docs": "https://github.com/sibartlett/jquery-ui-lookup",
     "dependencies": {
-        "jquery": "1.4 - 1.7.2",
-        "ui.autocomplete": "1.8.3 - 1.8.18",
-        "ui.dialog": "1.8.3 - 1.8.18"
+        "jquery": "1.4 - 1.8.2",
+        "ui.autocomplete": "1.8.19 - 1.9.0",
+        "ui.dialog": "1.8.19 - 1.9.0"
     }
 }
