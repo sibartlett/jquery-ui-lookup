@@ -10,8 +10,6 @@ h2. jsFiddle Demos
 * "Remote (JSONP) datasource":http://jsfiddle.net/simonbartlett/UywgC/
 * "Custom data and display":http://jsfiddle.net/simonbartlett/k3NTg/
 
-More demos to come.
-
 h2. Options
 
 |_. Name|_. Type|_. Default|_. Notes|
@@ -33,4 +31,4 @@ h2. Options
 
 h2. License
 
-This widget is dual licensed under the MIT or GPL Version 2 licenses; just like jQuery UI.
+This widget is dual licensed under the MIT; just like jQuery UI.

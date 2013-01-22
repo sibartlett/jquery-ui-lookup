@@ -1,0 +1,34 @@
+{
+    "name": "ui-lookup",
+    "title": "jQuery UI Lookup Dialog",
+    "description": "A lookup dialog widget based on the dialog and autocomplete widgets from jQuery UI.",
+    "keywords": [
+        "ui",
+        "lookup",
+        "dialog"
+    ],
+    "version": "1.0.0",
+    "author": {
+        "name": "Simon Bartlett",
+        "email": "simon.bartlett@me.com",
+        "url": "http://github.com/sibartlett"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://github.com/sibartlett/jquery-ui-lookup/blob/1.0.0/MIT-LICENSE.txt"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/sibartlett/jquery-ui-lookup.git"
+    },
+    "bugs": "https://github.com/sibartlett/jquery-ui-lookup/issues",
+    "homepage": "https://github.com/sibartlett/jquery-ui-lookup",
+    "docs": "https://github.com/sibartlett/jquery-ui-lookup",
+    "dependencies": {
+        "jquery": "1.4 - 1.7.2",
+        "ui.autocomplete": "1.8.3 - 1.8.18",
+        "ui.dialog": "1.8.3 - 1.8.18"
+    }
+}
