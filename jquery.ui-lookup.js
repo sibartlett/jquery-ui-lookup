@@ -1,13 +1,38 @@
 ﻿/*!
- * jQuery UI Lookup 1.1.0
+ * jQuery UI Lookup 1.2.0
  *
  * Copyright 2011, Simon Bartlett
- * Dual licensed under the MIT or GPL Version 2 licenses.
+ * Licensed under the MIT
  *
  * https://github.com/SimonBartlett/jquery-ui-lookup
  */
 
 (function ($) {
+
+	// Compares a version string to the jQuery UI'sversion string
+	// Compares to the 
+	function compareUiVersion(version) {
+		var versions = $.ui.version.split('.');
+		var params = version.split('.');
+		var depth = params.length;
+
+		for (var i = 0; i < depth; i++) {
+			if (versions[i]) {
+				var v = 1 * versions[i];
+				var p = 1 * params[i];
+
+				if (v > p) {
+					return -1;
+				}
+
+				if (v < p) {
+					return 1;
+				}
+			}
+		}
+
+		return 0;
+	}
 
 	$.lookup = {
 
@@ -21,7 +46,7 @@
 	};
 
 	$.widget('ui.lookup', {
-		version: '0.1.0',
+		version: '1.2.0',
 		options: {
 			cancelText: 'Cancel',
 			delay: 300,
@@ -112,6 +137,24 @@
 					
 					var self = $this._autocomplete.data('autocomplete');
 					self.close = function () {};
+
+					if (compareUiVersion('1.8.20') == 1) {
+						self._response = function (content) {
+							if (!self.options.disabled && content) {
+								content = self._normalize(content);
+								self._suggest(content);
+								self._trigger('open');
+							} else {
+								self.close();
+							}
+							self.pending--;
+							if (!self.pending) {
+								self.element.removeClass( "ui-autocomplete-loading" );
+							}
+						};
+					}
+
+
 					self.menu.element.dblclick(function (event) {
 						if (!$(event.target).closest('.ui-menu-item a').length) {
 							return;
