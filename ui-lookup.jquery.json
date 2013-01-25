@@ -27,7 +27,7 @@
     "homepage": "https://github.com/sibartlett/jquery-ui-lookup",
     "docs": "https://github.com/sibartlett/jquery-ui-lookup",
     "dependencies": {
-        "jquery": "1.4 - 1.8.2",
+        "jquery": ">=1.4",
         "ui.autocomplete": "1.8.3 - 1.9.0",
         "ui.dialog": "1.8.3 - 1.9.0"
     }

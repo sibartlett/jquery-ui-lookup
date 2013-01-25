@@ -68,8 +68,8 @@
 		_resizeAutocomplete: function () {
 			var context = $(this).is('.ui-dialog-content') ? $(this) : $(this).parent().parent();
 			$('.ui-lookup-results ul', context).css({
-				top: '',
-				left: '',
+				top: '35px',
+				left: '9px',
 				overflowY: 'auto',
 				overflowX: 'hidden',
 				width: $('.ui-lookup-results', context).width(),
